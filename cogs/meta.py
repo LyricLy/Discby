@@ -1,5 +1,3 @@
-# -*- coding: future_fstrings -*-
-
 import discord
 import subprocess
 
