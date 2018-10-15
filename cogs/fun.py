@@ -24,7 +24,7 @@ class Fun:
         heat = ((sum(data) / len(data)) / 255) * 10
         bar = "🔥" * int(heat) + "⬛" * (10 - int(heat))
 
-        embed = discord.Embed(name="Not" if heat < 5 else "Hot", description=" ".join(bar))
+        embed = discord.Embed(title="Not" if heat < 5 else "Hot", description=" ".join(bar))
         embed.set_footer(text=f"{heat:.2f} / 10")
         await ctx.send(embed=embed)
 
