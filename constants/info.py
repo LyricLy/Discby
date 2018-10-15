@@ -1,3 +1,5 @@
+# -*- coding: future_fstrings -*-
+
 NAME = "Discby"
 VERSION = "1.0.0"
 
