@@ -19,10 +19,6 @@ class Meta:
         embed.set_footer(text=f"{info.NAME} v{info.VERSION}")
         await ctx.send(embed=embed)
 
-    async def on_message(self, message):
-        if str(message.channel.id) == self.bot.config["Dev"]["updatetrigger"]:
-            subprocess.call(["git", "pull"])
-
 
 def setup(bot):
     bot.add_cog(Meta(bot))
