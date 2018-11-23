@@ -20,7 +20,7 @@ class Meta:
         await ctx.send(embed=embed)
 
     async def on_message(self, message):
-        if str(message.id) == self.bot.config["Dev"]["updatetrigger"]:
+        if str(message.channel.id) == self.bot.config["Dev"]["updatetrigger"]:
             subprocess.call(["git", "pull"])
 
 
