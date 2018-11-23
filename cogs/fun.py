@@ -15,7 +15,7 @@ class Fun:
     async def hotornot(self, ctx, member: discord.Member = None):
         """Returns if something is hot, or not."""
         member = member or ctx.author
-        url = member.avatar_url
+        url = member.avatar_url_as(format="png")
         async with self.bot.session.get(url) as resp:
             raw = await resp.read()
         img = Image.open(io.BytesIO(raw))
