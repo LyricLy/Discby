@@ -19,8 +19,7 @@ class Fun:
         async with self.bot.session.get(url) as resp:
             raw = await resp.read()
         img = Image.open(io.BytesIO(raw))
-        img.convert("HSV")
-        data = img.getdata(2)  # only the value
+        data = img.convert("HSV").getdata(2)  # only the value
 
         heat = ((sum(data) / len(data)) / 255) * 10
         bar = "🔥" * int(heat) + "⬛" * (10 - int(heat))
